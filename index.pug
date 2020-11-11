@@ -1,0 +1,45 @@
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title CodePen - 
+    link(rel='stylesheet', href='./style.css')
+  body
+    // partial:index.partial.html
+    #app
+      h3.topic Calada 人間特調
+      label.ed Editing
+        input.ee(type="checkbox",v-model="editing")
+        .drinkType(v-for="(coffee,id) in coffees",:class="{favorite:coffee.name==favoriteType}")
+          .num 0{{id+1}}
+          .cupContainer
+            .cup(:class="[coffee.type]")
+              .ingradients
+                .money(:style="{height: coffee.money+'%'}")
+                .achivement(:style="{height: coffee.achivement+'%'}")
+                .compatible(:style="{height: coffee.compatible+'%'}")
+                .feeling(:style="{height: coffee.feeling+'%'}")
+        
+          .control
+            
+            h2 {{coffee.name}}
+            div.r(v-if="editing", v-for="type in ['money','achivement','compatible','feeling']")
+              label {{type}}
+                input(type="range",v-model="coffee[type]",min="0",max="100")
+              //- label money
+              //-   input(type="range" v-model="coffee.money",min="0",max="100")
+              //- label achivement
+              //-   input(type="range" v-model="coffee.achivement",min="0",max="100")
+              //- label compatible
+              //-   input(type="range" v-model="coffee.compatible",min="0",max="100")
+              //- label feeling
+              //-   input(type="range" v-model="coffee.feeling",min="0",max="100")
+            select(v-model="coffee.type")
+              option(v-for="cupType in cupTypes", :value="cupType") {{cupType}}
+
+
+
+      
+    // partial
+    
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js')
+    script(src='./script.js')

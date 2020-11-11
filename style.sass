@@ -1,0 +1,209 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap')
+.success
+	background-color: #11efee
+.danger
+	background-color: rgb(17, 35, 17)
+	color: #ffffff
+@mixin size($w,$h:$w)
+	width: $w
+	height: $h
+	letter-spacing: 2px
+@media screen and (min-width: "500px")
+	body 
+		background-color: #3b4c8a
+		color: white
+		display: flex
+		justify-content: center
+		align-items: center
+		font-family: 'Roboto', sans-serif,'Noto Serif TC', serif
+
+	.drinkType
+		margin-top: 20px
+		display: flex
+		align-items: center
+		border-bottom: 1px solid rgba(white,0.1)
+		border-radius: 5px
+		max-width: 400px
+		padding: 10px 20px
+		cursor: pointer
+		transition: 0.2s
+		&:hover
+			background-color: rgba(white,0.2)
+		.num
+
+			font-size: 60px
+			flex: 1
+			margin-right: 30px
+			font-weight: 900
+		.cupContainer
+			flex: 3
+			margin: auto
+			margin-right: 30px
+		.control
+			flex: 3
+	.cup
+		border: 3px solid white
+		+size(70px,50px)
+		border-top: none
+		border-radius: 0 0 50px 50px
+		margin: 10px
+		padding-top: 5px
+		position: relative
+
+		&:before
+			content: ""
+			display: block
+			+size(15px,15px)
+			position: absolute
+			border: 3px solid white
+			left: 100%
+			top: 20%
+			border-radius: 0 30px 30px 0
+			border-left: none
+
+		.ingradients
+			+size(100%)
+			border-radius: 0 0 50px 50px
+			overflow: hidden
+			display: flex
+			flex-direction: column-reverse
+		.money,.achivement,.compatible,.feeling
+			background-color: white
+			height: 15px
+
+		.money
+			background-color: #fffc38
+		.achivement
+			background-color: #38ffe1
+		.compatible
+			background-color: #ff38db
+		.feeling
+			background-color: #ce8fff
+	.small
+		+size(50px,40px)
+	.large
+		+size(80px,70px)
+	.mock
+		+size(50px,70px)
+		border-radius: 0px
+		.ingradients
+			border-radius: 0px
+		.favorite
+			&:before
+				content: "MOST"
+				display: block
+				position: absolute
+				border: 2px solid #fc9e32
+				color: #fc9e32
+				padding: 3px 5px
+				margin-top: -40px
+				margin-left: -40px
+				transform: rotate(-32deg)
+	label
+		font-size: 12px
+		transition: 0.3s
+	.control
+		transition: 0.3s
+
+		letter-spacing: 2px
+@media screen and (max-width: "400px")
+	.topic
+		font-size: 30px
+		margin-left: 20%
+	.ed
+		font-size: 20px
+		margin-left: 40%
+		.ee
+			+size(20px)
+		.ingradients
+			+size(100%)
+			border-radius: 0 0 50px 50px
+			overflow: hidden
+			display: flex
+			flex-direction: column-reverse
+		.money,.achivement,.compatible,.feeling
+			background-color: white
+			height: 15px
+		.money
+			background-color: #fffc38
+		.achivement
+			background-color: #38ffe1
+		.compatible
+			background-color: #ff38db
+		.feeling
+			background-color: #ce8fff
+		.small
+			+size(50px,40px)
+		.large
+			+size(80px,70px)
+		.mock
+			+size(50px,70px)
+			border-radius: 0px
+			.ingradients
+				border-radius: 0px
+	body
+		display: block
+		background-color: #3b4c8a
+		color: white
+		font-family: 'Roboto', sans-serif,'Noto Serif TC', serif
+	.drinkType
+		display: block
+		width: 100%
+		cursor: pointer
+		transition: 0.2s
+	.cup
+		border: 3px solid white
+		+size(70px,50px)
+		border-top: none
+		border-radius: 0 0 50px 50px
+		margin: 10px
+		padding-top: 5px
+		position: relative
+		&:before
+			content: ""
+			display: block
+			+size(15px,15px)
+			position: absolute
+			border: 3px solid white
+			left: 100%
+			top: 20%
+			border-radius: 0 30px 30px 0
+			border-left: none
+	#app
+		width: 100%
+		
+	.num
+		margin: auto
+		margin-top: 50px
+		font-size: 60px
+		text-align: center
+		margin-right: 30px
+		font-weight: 900
+	.cupContainer
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		padding: 20px
+		
+
+	
+	.control
+		
+		margin-top: 120px
+		margin-left: 20%
+		select
+			margin-top: 10px
+			+size(100px,30px)
+			font-size: 18px
+		h2
+		font-size: 20px
+		
+		label
+			font-size: 20px
+			input
+				margin-bottom: 30px
+				
+				
+		

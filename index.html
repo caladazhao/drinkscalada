@@ -1,0 +1,45 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>CodePen - </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css"/>
+  </head>
+  <body>
+    <!-- partial:index.partial.html-->
+    <div id="app">
+      <h3 class="topic">Calada 人間特調</h3>
+      <label class="ed">Editing
+        <input class="ee" type="checkbox" v-model="editing"/>
+        <div class="drinkType" v-for="(coffee,id) in coffees" :class="{favorite:coffee.name==favoriteType}">
+          <div class="num">0{{id+1}}</div>
+          <div class="cupContainer">
+            <div class="cup" :class="[coffee.type]">
+              <div class="ingradients">
+                <div class="money" :style="{height: coffee.money+'%'}"></div>
+                <div class="achivement" :style="{height: coffee.achivement+'%'}"></div>
+                <div class="compatible" :style="{height: coffee.compatible+'%'}"></div>
+                <div class="feeling" :style="{height: coffee.feeling+'%'}"></div>
+              </div>
+            </div>
+          </div>
+          <div class="control">
+            <h2>{{coffee.name}}</h2>
+            <div class="r" v-if="editing" v-for="type in ['money','achivement','compatible','feeling']">
+              <label>{{type}}
+                <input type="range" v-model="coffee[type]" min="0" max="100"/>
+              </label>
+            </div>
+            <select v-model="coffee.type">
+              <option v-for="cupType in cupTypes" :value="cupType">{{cupType}}</option>
+            </select>
+          </div>
+        </div>
+      </label>
+    </div>
+    <!-- partial-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
