@@ -162,7 +162,7 @@
     letter-spacing: 2px;
     border-radius: 0 0 50px 50px;
     overflow: hidden;
-    display: inline-block;
+    display: flex;
     flex-direction: column-reverse;
   }
   .ed .money, .ed .achivement, .ed .compatible, .ed .feeling {
