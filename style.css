@@ -141,7 +141,7 @@
     letter-spacing: 2px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .topic {
     font-size: 30px;
     margin-left: 20%;
